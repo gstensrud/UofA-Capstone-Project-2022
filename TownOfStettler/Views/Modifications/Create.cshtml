@@ -1,0 +1,57 @@
+﻿@model TownOfStettler.Models.Modification
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Modification</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProcessorId" class="control-label">Processor ID:</label>
+                <select asp-for="ProcessorId" class ="form-control" asp-items="ViewBag.ProcessorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RamId" class="control-label">Ram ID:</label>
+                <select asp-for="RamId" class ="form-control" asp-items="ViewBag.RamId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="HardDriveId" class="control-label">Hard Drive ID:</label>
+                <select asp-for="HardDriveId" class ="form-control" asp-items="ViewBag.HardDriveId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiscellaneousDriveId" class="control-label">Miscellaneous Drive/Reader ID:</label>
+                <select asp-for="MiscellaneousDriveId" class ="form-control" asp-items="ViewBag.MiscellaneousDriveId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoundCardId" class="control-label">Sound Card ID:</label>
+                <select asp-for="SoundCardId" class ="form-control" asp-items="ViewBag.SoundCardId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoCardId" class="control-label">Video Card ID:</label>
+                <select asp-for="VideoCardId" class ="form-control" asp-items="ViewBag.VideoCardId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes:</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,79 @@
+﻿@model TownOfStettler.Models.DisplayMonitor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Display Monitor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.TosNumber)*@TOS Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TosNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.ViewSizeInches)*@View Size In Inches
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ViewSizeInches)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.ViewType)*@View Type
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ViewType)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Resolution)*@Resolution
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.RefreshRateHz)*@Refresh Rate Hz
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RefreshRateHz)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SerialNumber)*@Serial Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.OutputType)*@Output Type
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OutputType)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.NumberOfOutputs)*@Number Of Outputs
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfOutputs)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.HistoryNavigation)*@History Navigation
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HistoryNavigation.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

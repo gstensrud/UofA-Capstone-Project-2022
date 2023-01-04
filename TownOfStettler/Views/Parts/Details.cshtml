@@ -1,0 +1,68 @@
+﻿@model TownOfStettler.Models.Part
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Part</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.OriginalDevice)*@Original Device
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OriginalDevice.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.DeviceHistory)*@Device History
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeviceHistory.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Ram)*@Ram
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ram.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.HardDrive)*@Hard Drive
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HardDrive.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.MiscellaneousDrive)*@Miscellaneous Drive/Reader ID
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MiscellaneousDrive.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.VideoCard)*@Video Card
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VideoCard.Id)
+        </dd>
+
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SoundCard)*@Sound Card
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SoundCard.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

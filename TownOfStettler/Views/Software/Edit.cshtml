@@ -1,0 +1,79 @@
+﻿@model TownOfStettler.Models.Software
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Software</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ProductKey" class="control-label">Product Key:</label>
+                <input asp-for="ProductKey" class="form-control" />
+                <span asp-validation-for="ProductKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoftwareName" class="control-label">Software Name:</label>
+                <input asp-for="SoftwareName" class="form-control" />
+                <span asp-validation-for="SoftwareName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssociatedAccount" class="control-label">Associated Account:</label>
+                <input asp-for="AssociatedAccount" class="form-control" />
+                <span asp-validation-for="AssociatedAccount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subscription" class="control-label">Subscription:</label>
+                <input asp-for="Subscription" class="form-control" />
+                <span asp-validation-for="Subscription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubscriptionEndDate" class="control-label">Subscription End Date:</label>
+                <input asp-for="SubscriptionEndDate" class="form-control" />
+                <span asp-validation-for="SubscriptionEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurchaseDate" class="control-label">Purchase Date:</label>
+                <input asp-for="PurchaseDate" class="form-control" />
+                <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurchasePrice" class="control-label">Purchase Price:</label>
+                <input asp-for="PurchasePrice" class="form-control" />
+                <span asp-validation-for="PurchasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DevicesAllowed" class="control-label">Devices Allowed:</label>
+                <input asp-for="DevicesAllowed" class="form-control" />
+                <span asp-validation-for="DevicesAllowed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndOfSupportDate" class="control-label">End Of Support Date:</label>
+                <input asp-for="EndOfSupportDate" class="form-control" />
+                <span asp-validation-for="EndOfSupportDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

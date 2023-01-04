@@ -1,0 +1,115 @@
+﻿@using TownOfStettler.Models.Exceptions
+
+@{
+    ViewData["Title"] = "New Monitor Entry";
+}
+<h1> Add A New Monitor to the Database</h1>
+<h4>New Monitor from Invoice</h4>
+<hr />
+
+@if (ViewData["Exceptions"] != null)
+{
+    <ul>
+        @foreach (Exception sub in (ViewData["Exceptions"] as ValidationException).SubExceptions)
+        {
+            <li>@sub.Message</li>
+        }
+    </ul>
+}
+
+<div class="row"> 
+    <div class="col-md-4">
+        <form asp-action="EnterNewMonitor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Owner/Location ID #</label>
+                <input name="ownerLocationName" class="form-control" placeholder="int not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Address</label>
+                <input name="ownerAddress" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Phone Number</label>
+                <input name="ownerPhoneNumber" class="form-control" placeholder="String null" />
+            </div>
+            <p></p>
+
+
+            <div class="form-group">
+                <label class="control-label">New Monitor TOS Number</label>
+                <input name="TosNumber" class="form-control" placeholder="String  not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor Size in Inches</label>
+                <input name="monitorSize" class="form-control" placeholder="Decimal  not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor Type</label>
+                <input name="monitorType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor Resolution</label>
+                <input name="monitorResolution" class="form-control" placeholder="String null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor RefreshRate</label>
+                <input name="monitorRefreshRate" class="form-control" placeholder="Int null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor Serial Number</label>
+                <input name="monitorSerialNumber" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Monitor Output Type(s)</label>
+                <input name="monitorOutput" class="form-control" placeholder="String null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Number of Outputs Monitor Has</label>
+                <input name="monOutNum" class="form-control" placeholder="int null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notes" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>
+
+
+            @*<div class="form-group">
+                <label class="control-label">Warranty Type</label>
+                <input name="warrantyType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Length</label>
+                <input name="warrantyLength" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Expiry Date</label>
+                <input name="warrantyExpiryDate" class="form-control" placeholder="DateOnly  null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notes" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>*@
+
+
+            <div class="form-group">
+                <input type="submit" value="This is the GO button!" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

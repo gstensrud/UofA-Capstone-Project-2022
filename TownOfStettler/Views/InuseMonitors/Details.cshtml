@@ -1,0 +1,30 @@
+﻿@model TownOfStettler.Models.InuseMonitor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Inuse Monitor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Device)*@Device ID
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeviceIdWithName)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Monitor)*@Monitor ID
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MonitorIdWithName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

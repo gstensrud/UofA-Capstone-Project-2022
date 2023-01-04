@@ -1,0 +1,79 @@
+﻿@model TownOfStettler.Models.DisplayMonitor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Display Monitor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TosNumber" class="control-label">TOS Number:</label>
+                <input asp-for="TosNumber" class="form-control" />
+                <span asp-validation-for="TosNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewSizeInches" class="control-label">View Size In Inches:</label>
+                <input asp-for="ViewSizeInches" class="form-control" />
+                <span asp-validation-for="ViewSizeInches" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewType" class="control-label">View Type:</label>
+                <input asp-for="ViewType" class="form-control" />
+                <span asp-validation-for="ViewType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resolution" class="control-label">Resolution:</label>
+                <input asp-for="Resolution" class="form-control" />
+                <span asp-validation-for="Resolution" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RefreshRateHz" class="control-label">Refresh Rate Hz:</label>
+                <input asp-for="RefreshRateHz" class="form-control" />
+                <span asp-validation-for="RefreshRateHz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="control-label">Serial Number:</label>
+                <input asp-for="SerialNumber" class="form-control" />
+                <span asp-validation-for="SerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OutputType" class="control-label">Output Type:</label>
+                <input asp-for="OutputType" class="form-control" />
+                <span asp-validation-for="OutputType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfOutputs" class="control-label">Number Of Outputs:</label>
+                <input asp-for="NumberOfOutputs" class="form-control" />
+                <span asp-validation-for="NumberOfOutputs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="History" class="control-label">History:</label>
+                <select asp-for="History" class="form-control" asp-items="ViewBag.History"></select>
+                <span asp-validation-for="History" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes:</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

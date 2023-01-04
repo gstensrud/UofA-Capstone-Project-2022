@@ -1,0 +1,92 @@
+﻿@model IEnumerable<TownOfStettler.Models.History>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>History Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@*<form asp-action="Index" method="get">
+    <p>
+        Menu Search: <input type="text" name="SearchString" value="@ViewData["Filter"]" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="px-10">
+                @*@Html.DisplayNameFor(model => model.Device)*@Device ID
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.DeviceType)*@Device Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PartsRemoved)*@Parts Removed
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.DateOfChanges)*@Date Of Changes
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.OutOfServiceDate)*@Out Of Service Date
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PartsChangedNavigation)*@Parts Changed
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PastOwnerSNavigation)*@Past Owners
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Wiped)*@Wiped
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceIdWithName) @*DeviceId*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceTypeIdWithName) @*DeviceType.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartsRemoved)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrDoC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrOoS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartsChangedNavigation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PastOwnerSNavigation.Id) @*PastOwnerSNavigation.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wiped)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

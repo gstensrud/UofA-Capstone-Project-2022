@@ -1,0 +1,98 @@
+﻿@model IEnumerable<TownOfStettler.Models.Software>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Software Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@*<form asp-action="Index" method="get">
+    <p>
+        Menu Search: <input type="text" name="SearchString" value="@ViewData["Filter"]" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>*@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ProductKey)*@Product Key
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SoftwareName)*@Software Name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.AssociatedAccount)*@Associated Account
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.Subscription)*@Subscription
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SubscriptionEndDate)*@Subscription End Date
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PurchaseDate)*@Purchase Date
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PurchasePrice)*@PurchasePrice
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.DevicesAllowed)*@Devices Allowed
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.EndOfSupportDate)*@End Of Support Date
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftwareName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssociatedAccount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subscription)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.SubEndDate) @*From not mapp field*@
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.PurchDate) @*From not mapp field*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DevicesAllowed)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.EndOfSupport)@*From not mapp field*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

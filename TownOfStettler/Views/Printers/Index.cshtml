@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TownOfStettler.Models.Printer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Printer Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Device)*@Device ID
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.TosNumber)*@TOS Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Type)*@Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ConnectionType)*@Connection Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.HistoryNavigation)*@History
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.OwnerLocationNavigation)*@Owner Location
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceIdWithName) @*Device.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TosNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConnectionType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HistoryNavigation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerLocationNavigation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<TownOfStettler.Models.DisplayMonitor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Display Monitor Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@*<form asp-action="Index" method="get">
+    <p>
+        Menu Search: <input type="text" name="searchString" value="@ViewData["homeFilter"]" />
+        <input type="submit" value="Filter" />
+    </p>
+    </form>
+*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.TosNumber)*@TOS Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ViewSizeInches)*@View Size In Inches
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ViewType)*@View Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Resolution)*@Resolution
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.RefreshRateHz)*@Refresh Rate Hz
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SerialNumber)*@Serial Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.OutputType)*@Output Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.NumberOfOutputs)*@Number Of Outputs
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.HistoryNavigation)*@History ID
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TosNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ViewSizeInches)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ViewType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resolution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RefreshRateHz)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OutputType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfOutputs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HistoryNavigation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@model TownOfStettler.Models.Software
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Software</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.ProductKey)*@Product Key
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductKey)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SoftwareName)*@Software Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SoftwareName)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.AssociatedAccount)*@Associated Account
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AssociatedAccount)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Subscription)*@Subscription
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Subscription)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SubscriptionEndDate)*@Subscription End Date
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubEndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PurchaseDate)*@Purchase Date
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PurchDate)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PurchasePrice)*@Purchase Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.DevicesAllowed)*@Devices Allowed
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevicesAllowed)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.EndOfSupportDate)*@End Of Support Date
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndOfSupport)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

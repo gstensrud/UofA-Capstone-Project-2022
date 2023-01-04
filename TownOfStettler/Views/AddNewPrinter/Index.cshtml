@@ -1,0 +1,118 @@
+﻿@using TownOfStettler.Models.Exceptions
+
+@{
+    ViewData["Title"] = "New Printer Entry";
+}
+<h1> Add A New Printer to the Database</h1>
+<h4>New Printer from Invoice</h4>
+<hr />
+
+@if (ViewData["Exceptions"] != null)
+{
+    <ul>
+        @foreach (Exception sub in (ViewData["Exceptions"] as ValidationException).SubExceptions)
+        {
+            <li>@sub.Message</li>
+        }
+    </ul>
+}
+
+<div class="row"> 
+    <div class="col-md-4">
+        <form asp-action="EnterNewPrinter">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Owner/Location ID #</label>
+                <input name="ownerLocationName" class="form-control" placeholder="int not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Address</label>
+                <input name="ownerAddress" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Phone Number</label>
+                <input name="ownerPhoneNumber" class="form-control" placeholder="String null" />
+            </div>
+            <p></p>
+
+
+            <div class="form-group">
+                <label class="control-label">TOS Number for New Printer</label>
+                <input name="printerTOS" class="form-control" placeholder="String not null" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Printer Serial Number</label>
+                <input name="printerSerNum" class="form-control" placeholder="String not null" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Printer Model </label>
+                <input name="printerModel" class="form-control" placeholder="String not null" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Purchase Store</label>
+                <input name="store" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Purchase Price</label>
+                <input name="price" class="form-control" placeholder="Decimal  not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Date Of Purchase</label>
+                <input name="date" class="form-control" placeholder="DateOnly  not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notes" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>
+
+            <div class="form-group">
+                <label class="control-label">Printer Type (Ink/Laser/Dot Matrix/3D)</label>
+                <input name="printerType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Connection Type</label>
+                <input name="connectionType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notesPrinter" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>
+
+
+            @*<div class="form-group">
+                <label class="control-label">Warranty Type</label>
+                <input name="warrantyType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Length</label>
+                <input name="warrantyLength" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Expiry Date</label>
+                <input name="warrantyExpiryDate" class="form-control" placeholder="DateOnly not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notesWarrenty" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>*@
+
+
+            <div class="form-group">
+                <input type="submit" value="This is the GO button!" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

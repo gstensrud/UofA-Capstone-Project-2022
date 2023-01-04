@@ -1,0 +1,91 @@
+﻿@model TownOfStettler.Models.DeviceInformation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Device Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.TosNumber)*@TOS Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TosNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SerialNumber)*@Serial Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.ModelNumber)*@Model Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ModelNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PowerSupply)*@Power Supply
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PowerSupply)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PurchaseStore)*@Purchase Store
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PurchaseStore)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PurchasePrice)*@Purchase Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.PurchaseDate)*@Purchase Date
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StrIntDate)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.OperatingSystem)*@Operating System
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OperatingSystem)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Destroyed)*@Destroyed
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destroyed)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.DeviceType)*@Device Type
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeviceType.Id)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.OwnerLocationNavigation)*@Owner Location
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OwnerLocationNavigation.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

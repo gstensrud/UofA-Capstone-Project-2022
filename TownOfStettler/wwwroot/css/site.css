@@ -1,0 +1,94 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+body {
+    margin-bottom: 60px;
+    background-image: url('../images/stettlertrain.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.nav-item, .nav-link {
+    color: white;
+}
+
+html {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+h1, h3 {
+    color: white;
+}
+
+
+h4, label {
+    color: #fec751;
+    /*background-color: #781a16;*/
+    border-radius: 5px;
+}
+
+th {
+    color: #fec751;
+    /*background-color: #781a16;*/
+    border-radius: 5px;
+}
+
+form-group {
+    width: 100px;
+    color: aquamarine;
+}
+
+form {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Edits, .Details, .Deletes {
+    background-color:antiquewhite;
+    border-radius: 5px;
+}
+
+td {
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+}
+dd {
+    color:white;
+}
+dt {
+    color: #fec751;
+}
+p {
+    color: white;
+}
+
+a {
+    color: #fec751;
+}
+

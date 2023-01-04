@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TownOfStettler.Models.Output>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Output Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@*<form asp-action="Index" method="get">
+    <p>
+        Menu Search: <input type="text" name="SearchString" value="@ViewData["Filter"]" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>*@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Type)*@Type
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.NumberOfOutputs)*@Number Of Outputs
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.VideoCard)*@Video Card ID
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfOutputs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideosIdWithName) @*VideoCard.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Type">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Type">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Type">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

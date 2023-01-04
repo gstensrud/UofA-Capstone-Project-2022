@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TownOfStettler</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TownOfStettler.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/Images/Stetller__logo.jpg"/> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+              
+                        <li class="nav-item">
+                            <div class="dropdown show">
+                                <button class="btn btn-default dropdown-toggle" type="button" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>Menu</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+                                   @* <a class="dropdown-item" asp-area="" asp-controller="AddNewServer" asp-action="Index">Add New Server Entry</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AddNewDesktop" asp-action="Index">Add New Desktop Entry</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AddNewLaptop" asp-action="Index">Add New Laptop Entry</a*@
+                                    <a class="dropdown-item" asp-area="" asp-controller="AddNewHardwareDevice" asp-action="Index">Add New Hardware Device Entry</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AddNewMonitor" asp-action="Index">Add New Monitor Entry</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AddNewPrinter" asp-action="Index">Add New Printer Entry</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="DeviceInformation" asp-action="Index">Device Information</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="DisplayMonitor" asp-action="Index">Display Monitor</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="EthernetNetwork" asp-action="Index">Ethernet Network</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="HardDrive" asp-action="Index">Hard Drive</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="HardwareDevice" asp-action="Index">Hardware Device</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="History" asp-action="Index">History</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="InstalledSoftware" asp-action="Index">Installed Software</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="InuseMonitors" asp-action="Index">Inused Monitors</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="MiscellaneousDrives" asp-action="Index">Miscellaneous Drive/Reader</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Modifications" asp-action="Index">Modification</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="OtherHardware" asp-action="Index">Other Hardware</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Outputs" asp-action="Index">Output</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="OwnerLocation" asp-action="Index">Owner Location</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Parts" asp-action="Index">Part</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Printers" asp-action="Index">Printer</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Processors" asp-action="Index">Processor</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Ram" asp-action="Index">Ram</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Software" asp-action="Index">Software</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="SoundCard" asp-action="Index">Sound Card</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="VideoCard" asp-action="Index">Video Card</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Warranty" asp-action="Index">Warranty</a>
+                                    
+                                </div>
+                            </div>
+
+                          
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Town Of Stettler - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

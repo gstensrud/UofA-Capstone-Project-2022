@@ -1,0 +1,92 @@
+﻿@model IEnumerable<TownOfStettler.Models.Part>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Part Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@*<form asp-action="Index" method="get">
+    <p>
+        Menu Search: <input type="text" name="SearchString" value="@ViewData["Filter"]" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.OriginalDevice)*@Original Device ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.DeviceHistory)*@Device History ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.Ram)*@Ram ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.HardDrive)*@Hard Drive ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.MiscellaneousDrive)*@Miscellaneous Drive/Reader ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.VideoCard)*@Video Card ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.SoundCard)*@Sound Card ID
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalDeviceIdWithName) @*OriginalDevice.Id*@
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceHistory.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RamIdWithName) @*Ram.Id*@
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.HDDIdWithName) @*HardDrive.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiscIdWithName)    @*MiscellaneousDrive.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideosIdWithName) @*VideoCard.Id*@
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoundCard.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

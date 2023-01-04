@@ -1,0 +1,99 @@
+﻿@using TownOfStettler.Models.Exceptions
+
+@{
+    ViewData["Title"] = "New Miscellaneous Hardware Device Entry";
+}
+<h1> Add A New Hardware Miscellaneous Device to the Database</h1>
+<h4>New Miscellaneous Hardware Device from Invoice</h4>
+<hr />
+
+@if (ViewData["Exceptions"] != null)
+{
+    <ul>
+        @foreach (Exception sub in (ViewData["Exceptions"] as ValidationException).SubExceptions)
+        {
+            <li>@sub.Message</li>
+        }
+    </ul>
+}
+
+<div class="row"> 
+    <div class="col-md-4">
+        <form asp-action="EnterNewHardwareDevice">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="control-label">Owner/Location ID #</label>
+                <input name="ownerLocationName" class="form-control" placeholder="int not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Address</label>
+                <input name="ownerAddress" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Owner/Location Phone Number</label>
+                <input name="ownerPhoneNumber" class="form-control" placeholder="String null" />
+            </div>
+            <p></p>
+
+
+            <div class="form-group">
+                <label class="control-label">TOS Number for New Hardware</label>
+                <input name="hrdwreTOSnum" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Other Hardware Type (Mouse/Keyboard/Speakers/Etc)</label>
+                <input name="hrdwreType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notes" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>
+
+
+            @*<div class="form-group">
+                <label class="control-label">Warranty Type</label>
+                <input name="warrantyType" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Length</label>
+                <input name="warrantyLength" class="form-control" placeholder="String not null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Warranty Expiry Date</label>
+                <input name="warrantyExpiryDate" class="form-control" placeholder="DateOnly  null" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label">Notes</label>
+                <input name="notes" class="form-control" placeholder="Text  null" />
+            </div>
+            <p></p>*@
+
+
+            <div class="form-group">
+                <input type="submit" value="This is the GO button!" class="btn btn-primary" />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+</div>

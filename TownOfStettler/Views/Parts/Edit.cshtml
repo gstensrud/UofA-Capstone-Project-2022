@@ -1,0 +1,69 @@
+﻿@model TownOfStettler.Models.Part
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Part</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="OriginalDeviceId" class="control-label">Original Device ID:</label>
+                <select asp-for="OriginalDeviceId" class="form-control" asp-items="ViewBag.OriginalDeviceId"></select>
+                <span asp-validation-for="OriginalDeviceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceHistoryId" class="control-label">Device History ID:</label>
+                <select asp-for="DeviceHistoryId" class="form-control" asp-items="ViewBag.DeviceHistoryId"></select>
+                <span asp-validation-for="DeviceHistoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RamId" class="control-label">Ram ID:</label>
+                <select asp-for="RamId" class="form-control" asp-items="ViewBag.RamId"></select>
+                <span asp-validation-for="RamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HardDriveId" class="control-label">Hard Drive ID:</label>
+                <select asp-for="HardDriveId" class="form-control" asp-items="ViewBag.HardDriveId"></select>
+                <span asp-validation-for="HardDriveId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiscellaneousDriveId" class="control-label">Miscellaneous Drive ID:</label>
+                <select asp-for="MiscellaneousDriveId" class="form-control" asp-items="ViewBag.MiscellaneousDriveId"></select>
+                <span asp-validation-for="MiscellaneousDriveId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoCardId" class="control-label">Video Card ID:</label>
+                <select asp-for="VideoCardId" class="form-control" asp-items="ViewBag.VideoCardId"></select>
+                <span asp-validation-for="VideoCardId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoundCardId" class="control-label">Sound Card ID:</label>
+                <select asp-for="SoundCardId" class="form-control" asp-items="ViewBag.SoundCardId"></select>
+                <span asp-validation-for="SoundCardId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes:</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

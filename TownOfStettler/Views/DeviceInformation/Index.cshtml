@@ -1,0 +1,112 @@
+﻿@model IEnumerable<TownOfStettler.Models.DeviceInformation>
+
+@{
+    ViewData["Title"] = "Index";
+    string searchResults = (ViewBag.Info == null) ? "" : String.Join("\n", ViewBag.Info);
+}
+
+<h1>Device Information Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+
+
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.DeviceType)*@Device Type
+            </th>
+
+            <th>
+                @*@Html.DisplayNameFor(model => model.TosNumber)*@TOS Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.SerialNumber)*@Serial Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ModelNumber)*@Model Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PowerSupply)*@Power Supply
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PurchaseStore)*@Purchase Store
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PurchasePrice)*@Purchase Price
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PurchaseDate)*@Purchase Date
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.OperatingSystem)*@Operating System
+            </th>
+            <th class="px-5">
+                @*@Html.DisplayNameFor(model => model.OwnerLocationNavigation)*@Owner Location
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Destroyed)*@Destroyed
+            </th>
+
+            <th>
+                @*@Html.DisplayNameFor(model => model.Notes)*@Notes
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceTypeIdWithName) @*DeviceType.Id*@
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TosNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PowerSupply)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseStore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchasePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrIntDate) @*Dates properly changed here*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OperatingSystem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerLocationIdWithName) @*OwnerLocationNavigation.Id*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destroyed)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
